@@ -7,4 +7,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  namespace :admin do
+    resources :users
+  end
+
+  resources :homes, only: [:index]
+  get :about_us, to: 'homes#about_us'
+  get :gallery, to: 'homes#gallery'
+  get :contact_us, to: 'homes#contact_us'
+  get :schedule, to: 'homes#schedule'
+
+  # Defines the root path route ("/")
+  root "homes#index"
 end

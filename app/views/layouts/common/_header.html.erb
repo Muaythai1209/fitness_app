@@ -1,0 +1,53 @@
+<header class='<%= get_main_header_class %>'>
+  <div class="container-fluid">
+    <div class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag asset_path("logo.png") %>
+      <% end %>
+    </div>
+
+    <div class="top-social">
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-pinterest-p"></i></a>
+      <a href="#"><i class="fa fa-youtube-play"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+
+    <div class="container">
+      <div class="nav-menu">
+        <nav class="mainmenu mobile-menu">
+          <ul>
+            <li class='<%= get_nav_menu_class('index') %>'>
+              <%= link_to 'Home', root_path %>
+            </li>
+
+            <li class='<%= get_nav_menu_class('about_us') %>'>
+              <%= link_to 'About us', about_us_path %>
+            </li>
+
+            <li>
+              <%= link_to 'Schedule', schedule_path %>
+            </li>
+
+            <li class='<%= get_nav_menu_class('gallery') %>'>
+              <%= link_to 'Gallery', gallery_path %>
+            </li>
+
+            <%# <li><a href="./blog.html">Blog</a>
+              <ul class="dropdown">
+                <li><a href="./about-us.html">About Us</a></li>
+                <li><a href="./blog-single.html">Blog Details</a></li>
+              </ul>
+            </li> %>
+
+            <li class='<%= get_nav_menu_class('contact_us') %>'>
+              <%= link_to 'Contacts', contact_us_path %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div id="mobile-menu-wrap"></div>
+  </div>
+</header>
