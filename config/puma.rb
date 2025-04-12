@@ -44,9 +44,6 @@
 # plugin :tmp_restart
 
 
-Rails.logger.info(ENV['RAILS_ENV'])
-Rails.logger.info('************************')
-
 if ENV['RAILS_ENV'] == 'production'
   # frozen_string_literal: true
 
