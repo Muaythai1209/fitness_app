@@ -43,17 +43,41 @@
 # # Allow puma to be restarted by `bin/rails restart` command.
 # plugin :tmp_restart
 
+
+Rails.logger.info(ENV['RAILS_ENV'])
+Rails.logger.info('************************')
+
 if ENV['RAILS_ENV'] == 'production'
+  # frozen_string_literal: true
+
+  # Directory where your Rails app is located
   directory '/home/admin/work/fitness_app'
-  rackup "/home/admin/work/fitness_appconfig.ru"
-  environment 'production'
-  pidfile "/home/admin/work/fitness_app/tmp/pids/puma.pid"
-  state_path "/home/admin/work/fitness_app/tmp/pids/puma.state"
-  stdout_redirect '/home/admin/work/fitness_app/log/puma.error.log', '/home/admin/work/fitness_app/log/puma.access.log', true
 
-  bind 'unix:///home/admin/work/fitness_app/tmp/sockets/puma.sock'
+  # Rails environment
+  environment ENV.fetch("RAILS_ENV") { "production" }
+
+  # Path to rack config (entry point)
+  rackup "/home/admin/work/fitness_app/config.ru"
+
+  # Socket for Nginx to proxy to
+  bind "unix:///home/admin/work/fitness_app/tmp/sockets/puma.sock"
+
+  # Logging
+  stdout_redirect '/home/admin/work/fitness_app/log/puma.stdout.log',
+                  '/home/admin/work/fitness_app/log/puma.stderr.log',
+                  true
+
+  # Puma process management
+  pidfile '/home/admin/work/fitness_app/tmp/pids/puma.pid'
+  state_path '/home/admin/work/fitness_app/tmp/pids/puma.state'
+
+  # Threads (min, max)
+  threads 1, 6
+
+  # Clustered mode (can be 2–4 workers depending on server RAM)
   workers 2
-  threads 1,6
-
   preload_app!
+
+  # Optional: Allow restart from `rails restart` (Rails 5+)
+  plugin :tmp_restart
 end
