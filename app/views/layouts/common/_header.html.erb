@@ -1,16 +1,27 @@
 <header class='<%= get_main_header_class %>'>
   <div class="container-fluid">
-    <div class="logo">
+    <div class="logo main-logo">
       <%= link_to root_path do %>
         <%= image_tag asset_path("logo.png") %>
       <% end %>
     </div>
 
     <div class="top-social">
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-pinterest-p"></i></a>
-      <a href="#"><i class="fa fa-youtube-play"></i></a>
-      <a href="#"><i class="fa fa-instagram"></i></a>
+      <%= link_to 'https://www.youtube.com/@Fightrix-Club', target: '_blank' do %>
+        <i class="fa fa-youtube-play"></i>
+      <% end %>
+
+      <%= link_to 'https://www.instagram.com/fightrixclub/?igsh=d3EzcnlzMWJ3cHd4', target: '_blank' do %>
+        <i class="fa fa-instagram"></i>
+      <% end %>
+
+      <%= link_to 'https://www.threads.net/@fightrixclub', target: '_blank' do %>
+        <i class="fa fa-twitter"></i>
+      <% end %>
+
+      <%= link_to 'mailto:fightrixclub@gmail.com', target: '_blank' do %>
+        <i class="fa fa-google-plus"></i>
+      <% end %>
     </div>
 
     <div class="container">

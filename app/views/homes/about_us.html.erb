@@ -89,7 +89,7 @@
 <!-- Aboutus Section End -->
 
 <!-- Testimonial Section End -->
-<section class="testimonial-section set-bg spad" data-setbg="<%= asset_path('testimonial-bg.jpg') %>">
+<section class="testimonial-section set-bg spad d-none" data-setbg="<%= asset_path('testimonial-bg.jpg') %>">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
@@ -166,7 +166,7 @@
 <!-- Testimonial Section End -->
 
 <!-- Trainer Section Begin -->
-<section class="trainer-section spad">
+<section class="trainer-section spad d-none">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -253,17 +253,19 @@
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="cta-text">
-          <h3>GeT Started Today</h3>
-          <p>New student special! $30 unlimited Gym for the first week anh 50% of our member!</p>
-        </div>
+<% if false %>
+  <section class="cta-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="cta-text">
+            <h3>GeT Started Today</h3>
+            <p>New student special! $30 unlimited Gym for the first week anh 50% of our member!</p>
+          </div>
 
-        <a href="#" class="primary-btn cta-btn">book now</a>
+          <a href="#" class="primary-btn cta-btn">book now</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+<% end %>

@@ -242,7 +242,7 @@
         <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-1.jpg') %>">
           <h4>Crossfit Level 1</h4>
           <p>Sufferers around the globe will be happy to hear that there are sleep apnea remedies.</p>
-          <a href="#" class="primary-btn class-btn">Read More</a>
+          <a href="#" class="primary-btn class-btn d-none">Read More</a>
         </div>
       </div>
 
@@ -251,7 +251,7 @@
           <h4>BootCamp</h4>
           <p>The oil, also called linseed oil, has many industrial uses – it is an important ingredient
           </p>
-          <a href="#" class="primary-btn class-btn">Read More</a>
+          <a href="#" class="primary-btn class-btn d-none">Read More</a>
         </div>
       </div>
 
@@ -259,7 +259,7 @@
         <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-3.jpg') %>">
           <h4>Energy Blast</h4>
           <p>It is a very common occurrence like cold or fever depending upon your lifestyle. </p>
-          <a href="#" class="primary-btn class-btn">Read More</a>
+          <a href="#" class="primary-btn class-btn d-none">Read More</a>
         </div>
       </div>
 
@@ -267,7 +267,7 @@
         <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-4.jpg') %>">
           <h4>CLASSIC BODY BALANCE</h4>
           <p>The procedure is usually a preferred alternative to photorefractive keratectomy,</p>
-          <a href="#" class="primary-btn class-btn">Read More</a>
+          <a href="#" class="primary-btn class-btn d-none">Read More</a>
         </div>
       </div>
     </div>
@@ -276,7 +276,7 @@
 <!-- Classes Section End -->
 
 <!-- Choseus Section Begin -->
-<section class="chooseus-section schedule-page spad">
+<section class="chooseus-section schedule-page spad d-none">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -352,19 +352,21 @@
 </section>
 <!-- Choseus Section End -->
 
-<!-- Cta Section Begin -->
-<section class="cta-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="cta-text">
-          <h3>GeT Started Today</h3>
-          <p>New student special! $30 unlimited Gym for the first week anh 50% of our member!</p>
-        </div>
+<% if false %>
+  <!-- Cta Section Begin -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="cta-text">
+            <h3>GeT Started Today</h3>
+            <p>New student special! $30 unlimited Gym for the first week anh 50% of our member!</p>
+          </div>
 
-        <a href="#" class="primary-btn cta-btn">book now</a>
+          <a href="#" class="primary-btn cta-btn">book now</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Cta Section End -->
+  </section>
+  <!-- Cta Section End -->
+<% end %>
