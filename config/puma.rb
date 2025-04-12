@@ -43,16 +43,17 @@
 # # Allow puma to be restarted by `bin/rails restart` command.
 # plugin :tmp_restart
 
+if ENV['RAILS_ENV'] == 'production'
+  directory '/home/admin/work/fitness_app'
+  rackup "/home/admin/work/fitness_appconfig.ru"
+  environment 'production'
+  pidfile "/home/admin/work/fitness_app/tmp/pids/puma.pid"
+  state_path "/home/admin/work/fitness_app/tmp/pids/puma.state"
+  stdout_redirect '/home/admin/work/fitness_app/log/puma.error.log', '/home/admin/work/fitness_app/log/puma.access.log', true
 
-directory '/home/admin/work/fitness_app'
-rackup "/home/admin/work/fitness_appconfig.ru"
-environment 'production'
-pidfile "/home/admin/work/fitness_app/tmp/pids/puma.pid"
-state_path "/home/admin/work/fitness_app/tmp/pids/puma.state"
-stdout_redirect '/home/admin/work/fitness_app/log/puma.error.log', '/home/admin/work/fitness_app/log/puma.access.log', true
+  bind 'unix:///home/admin/work/fitness_app/tmp/sockets/puma.sock'
+  workers 2
+  threads 1,6
 
-bind 'unix:///home/admin/work/fitness_app/tmp/sockets/puma.sock'
-workers 2
-threads 1,6
-
-preload_app!
+  preload_app!
+end
