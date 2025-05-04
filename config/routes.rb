@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#new'
   get '/sign_out', to: 'sessions#destroy', as: :sign_out
-  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/google_oauth2/callback', to: 'sessions#create'
   get '/auth/google_oauth2', as: :sign_in
   get '/auth/failure' => 'sessions#failure'
 
