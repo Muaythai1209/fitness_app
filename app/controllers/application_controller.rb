@@ -11,8 +11,4 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= AdminUser.find_by(id: session[:user_id]) if session[:user_id]
   end
-
-  def login_flipper?
-    Flipper.enabled?(:login_by_sso)
-  end
 end
