@@ -1,39 +1,22 @@
 <footer class="footer-section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3">
-        <div class="footer-logo-item">
-          <div class="f-logo">
-            <a href="#"><%= image_tag asset_path("logo.png") %></a>
-          </div>
-
-          <p>Despite growth of the Internet over the past seven years, the use of toll-free phone numbers
-              in television advertising continues.</p>
-
-          <div class="social-links">
-            <h6>Follow us aaa</h6>
-            <%= link_to 'https://www.youtube.com/@Fightrix-Club', target: '_blank' do %>
-              <i class="fa fa-youtube-play"></i>
-            <% end %>
-
-            <%= link_to 'https://www.instagram.com/fightrixclub/?igsh=d3EzcnlzMWJ3cHd4', target: '_blank' do %>
-              <i class="fa fa-instagram"></i>
-            <% end %>
-
-            <%= link_to 'https://www.threads.net/@fightrixclub', target: '_blank' do %>
-              <i class="fa fa-twitter"></i>
-            <% end %>
-
-            <%= link_to 'mailto:fightrixclub@gmail.com', target: '_blank' do %>
-              <i class="fa fa-google-plus"></i>
-            <% end %>
-            
-          </div>
+      <div class="col">
+        <div class="f-logo">
+          <a href="#"><%= image_tag asset_path("logo.png"), class: "w-20" %></a>
         </div>
-      </div>
 
-      <div class="col-lg-3 offset-lg-1">
-        <% if false %>
+        <p class="mt-2">
+          The Matrix – Where Warriors Are Made
+        </p>
+        <p>
+          At Fightrix, we empower people through world-class combat training, functional fitness, and mental fortitude. Whether you're a seasoned fighter, a dedicated athlete, or just starting out—this is your space to grow, push limits, and transform.
+        </p>
+      </div>
+    </div>
+
+      <% if false %>
+        <div class="col-lg-3 offset-lg-1">
           <div class="footer-widget">
             <h5>Our Blog</h5>
 
@@ -54,24 +37,26 @@
               </a>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
 
-      <div class="col-lg-2">
+    <div class="row mt-5">
+      <div class="col-lg-5">
         <div class="footer-widget">
-          <h5>Program</h5>
+          <h5 class="mb-0">Programs - Powered by Fightrix</h5>
 
-          <ul class="workout-program">
-            <li><a href="#">Bodybuilding</a></li>
-            <li><a href="#">Running</a></li>
-            <li><a href="#">Streching</a></li>
-            <li><a href="#">Weight Loss</a></li>
-            <li><a href="#">Gym Fitness</a></li>
+          <ul class="workout-program mt-5 ml-3">
+            <li>Combat Training (MuayThai, MMA, Kickboxing, Boxing)</li>
+            <li>Kids Martial Arts</li>
+            <li>Strength & Conditioning</li>
+            <li>Women's Self-Defense</li>
+            <li>HIT & Fitness Circuit, Athletic Performance</li>
+            <li>Mind & Mobility (Yoga, Recovery, Dynamic Stretching)</li>
           </ul>
         </div>
       </div>
 
-      <div class="col-lg-3">
+      <div class="col-lg-5">
         <div class="footer-widget">
           <h5>Get Info</h5>
 
@@ -79,21 +64,43 @@
             <li>
               <i class="fa fa-phone"></i>
               <span>Phone:</span>
-              +91 9669696692
+              <%= ApplicationSetting.phone_number %>
             </li>
 
             <li>
               <i class="fa fa-envelope-o"></i>
               <span>Email:</span>
-              Fightrixclub@gmail.com
+              <%= ApplicationSetting.contact_email %>
             </li>
 
             <li>
               <i class="fa fa-map-marker"></i>
               <span>Address</span>
-              Near Pagnis Paga, Juni Indore, 452001
+              <%= ApplicationSetting.club_address %>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div class="footer-logo-item col-lg-2">
+        <div class="social-links footer-widget">
+          <h5>Follow us on</h5>
+          <%= link_to 'https://www.youtube.com/@Fightrix-Club', target: '_blank' do %>
+            <i class="fa fa-youtube-play"></i>
+          <% end %>
+
+          <%= link_to 'https://www.instagram.com/fightrixclub/?igsh=d3EzcnlzMWJ3cHd4', target: '_blank' do %>
+            <i class="fa fa-instagram"></i>
+          <% end %>
+
+          <%= link_to 'https://www.threads.net/@fightrixclub', target: '_blank' do %>
+            <i class="fa fa-twitter"></i>
+          <% end %>
+
+          <%= link_to 'mailto:fightrixclub@gmail.com', target: '_blank' do %>
+            <i class="fa fa-google-plus"></i>
+          <% end %>
+          
         </div>
       </div>
     </div>

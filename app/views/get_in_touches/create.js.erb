@@ -1,0 +1,10 @@
+const formResponse = $("#form-response");
+
+<% if @success %>
+  alert("Thank you! Your message has been sent.");
+  document.getElementById("contact-form").reset();
+<% else %>
+  <% @messages.each do |message| %>
+    formResponse.append("<p style='color: red'><%= j message %></p>");
+  <% end %>
+<% end %>

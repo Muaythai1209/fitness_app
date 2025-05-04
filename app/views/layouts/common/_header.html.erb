@@ -40,9 +40,11 @@
               <%= link_to 'Schedule', schedule_path %>
             </li>
 
-            <li class='<%= get_nav_menu_class('gallery') %>'>
-              <%= link_to 'Gallery', gallery_path %>
-            </li>
+            <% if false %>
+              <li class='<%= get_nav_menu_class('gallery') %>'>
+                <%= link_to 'Gallery', gallery_path %>
+              </li>
+            <% end %>
 
             <%# <li><a href="./blog.html">Blog</a>
               <ul class="dropdown">

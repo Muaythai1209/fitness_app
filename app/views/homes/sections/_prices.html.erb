@@ -4,91 +4,97 @@
       <div class="col-lg-12">
         <div class="section-title">
           <h2>CHOOSE YOUR PRICING PLAN</h2>
-          <p>These reports started to surface when Congress was having hearings about the<br />
-              painkiller, Vioxx. A Food and Drug Administration staff member.</p>
+          <p>
+            You’re just one call away from unlocking your power! Join now and kickstart your fitness journey with our exciting launch offer – limited spots only!
+          </p>
+          <p class="mt-3">
+            One time registration fee Rs. 500 will be applicable with all the below packages.
+          </p>
         </div>
 
-        <div class="toggle-option">
-          <ul>
-            <li>Monthly</li>
+        <% if false %>
+          <div class="toggle-option">
+            <ul>
+              <li>Monthly</li>
 
-            <li>
-              <label class="switch">
-                <input type="checkbox" checked>
-                <span class="slider"></span>
-              </label>
-            </li>
+              <li>
+                <label class="switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+              </li>
 
-            <li>Years</li>
-          </ul>
-        </div>
+              <li>Years</li>
+            </ul>
+          </div>
+        <% end %>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-lg-4">
-        <div class="single-price-plan">
-          <h4>Normal</h4>
+      <% @fitness_plans.each do |fitness_plan| %>
+        <div class="col-lg-4 d-flex mt-5">
+          <div class="single-price-plan h-100 w-100">
+            <h4><%= fitness_plan.title.upcase %></h4>
 
-          <div class="price-plan">
-            <h2>55 <span>$</span></h2>
-            <p>Monthly</p>
+            <ul class="px-5 mb-2">
+              <li class="text-secondary">
+                Monthly - 
+                <span class="text-primary">
+                  <span class="mr-1">Rs </span><%= fitness_plan.monthly %>
+                </span>
+              </li>
+
+              <li class="text-secondary">
+                Quarterly - 
+                <span class="text-primary">
+                  <span class="mr-1">Rs </span><%= fitness_plan.quarterly %>
+                </span>
+              </li>
+
+              <li class="text-secondary">
+                Half Yearly - 
+                <span class="text-primary">
+                  <span class="mr-1">Rs </span><%= fitness_plan.half_yearly %>
+                </span>
+              </li>
+
+              <li class="text-secondary">
+                Yearly - 
+                <span class="text-primary">
+                  <span class="mr-1">Rs </span><%= fitness_plan.yearly %>
+                </span>
+              </li>
+            </ul>
+
+            <ul class="px-5 mb-0">
+              <li>
+                With Diet
+
+                <% if fitness_plan.with_diet %>
+                  <i class="fa fa-check ml-1 text-success"></i>
+                <% else %>
+                  <i class="fa fa-times ml-1 text-danger"></i>
+                <% end %>
+              </li>
+            </ul>
+
+            <ul class="px-5 mb-0">
+              <li>
+                Personal Training
+
+                <% if fitness_plan.personal_training %>
+                  <i class="fa fa-check ml-1 text-success"></i>
+                <% else %>
+                  <i class="fa fa-times ml-1 text-danger"></i>
+                <% end %>
+              </li>
+            </ul>
+
+            <%# <a href="#" class="primary-btn price-btn">Get Started</a> %>
           </div>
-
-          <ul>
-            <li>Unlimited access to the gym</li>
-            <li>1 classes per week</li>
-            <li>FREE drinking package</li>
-            <li>1 Free personal training</li>
-          </ul>
-
-          <a href="#" class="primary-btn price-btn">Get Started</a>
         </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="single-price-plan">
-          <h4>Professional</h4>
-
-          <div class="price-plan">
-            <h2>95 <span>$</span></h2>
-            <p>Monthly</p>
-          </div>
-
-          <ul>
-            <li>Unlimited access to the gym</li>
-            <li>2 classes per week</li>
-            <li>FREE drinking package</li>
-            <li>2 Free personal training</li>
-          </ul>
-
-          <a href="#" class="primary-btn price-btn">Get Started</a>
-
-          <div class="tic-text">
-            <i class="fa fa-star"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="single-price-plan">
-          <h4>Advanced</h4>
-
-          <div class="price-plan">
-            <h2>165 <span>$</span></h2>
-            <p>Monthly</p>
-          </div>
-
-          <ul>
-            <li>Unlimited access to the gym</li>
-            <li>6 classes per week</li>
-            <li>FREE drinking package</li>
-            <li>5 Free personal training</li>
-          </ul>
-
-          <a href="#" class="primary-btn price-btn">Get Started</a>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </section>

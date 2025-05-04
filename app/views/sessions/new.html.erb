@@ -1,0 +1,8 @@
+<div class="content">
+  <div class="welcome">
+    <span><%= I18n.t('login.page.title') %></span>
+  </div>
+  <div class="login-div">
+    <%= link_to I18n.t('login.button'), sign_in_path, data: { turbo: false }, class: "login-button" %>
+  </div>
+</div>

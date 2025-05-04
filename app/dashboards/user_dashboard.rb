@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class UserDashboard < BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,19 +8,18 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id: Field::Number,
     aadhaar_number: Field::String,
     address: Field::String,
-    blood_group: Field::String,
+    blood_group: SELECT_WITH_OPTIONS,
     first_name: Field::String,
     guardian_name: Field::String,
     guardian_phone_number: Field::String,
     last_name: Field::String,
     medical_history: Field::Text,
     phone_number: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-  }.freeze
+    joining_date: Field::Date,
+    full_name: Field::String,
+  }.merge(DASHBOARD_ATTRIBUTES).freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -29,24 +28,26 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    aadhaar_number
-    address
+    full_name
     blood_group
+    phone_number
+    status
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    id
+    first_name
+    last_name
+    phone_number
+    blood_group
+    status
     aadhaar_number
     address
-    blood_group
-    first_name
+    joining_date
     guardian_name
     guardian_phone_number
-    last_name
     medical_history
-    phone_number
     created_at
     updated_at
   ].freeze
@@ -55,15 +56,20 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    first_name
+    last_name
+    phone_number
+    blood_group
+    status
+
     aadhaar_number
     address
-    blood_group
-    first_name
+    joining_date
+
     guardian_name
     guardian_phone_number
-    last_name
+    
     medical_history
-    phone_number
   ].freeze
 
   # COLLECTION_FILTERS

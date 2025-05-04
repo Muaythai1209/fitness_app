@@ -7,3 +7,7 @@
 //= require owl.carousel.min.js
 //= require masonry.pkgd.min.js
 //= require main.js
+//= require rails-ujs
+//= require get_in_touch
+
+Rails.start()

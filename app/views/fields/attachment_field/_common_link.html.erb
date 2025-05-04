@@ -1,0 +1,9 @@
+<% if field.attached? %>
+  <%=
+    link_to field.attachment_file_name,
+      field.custom_url? ? field.custom_download_path : rails_blob_path(field.doc_keeper.report, disposition: 'attachment'),
+      method: field.custom_url? ? :post : :get
+  %>
+<% else %>
+  <%= I18n.t('document_keeper.no_file_attached') %>
+<% end %>

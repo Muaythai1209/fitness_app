@@ -1,0 +1,120 @@
+<%= render 'layouts/common/loader' %>
+
+<!-- Map Section Begin -->
+<div class="contact-map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.501261775972!2d75.85475887510316!3d22.709602927935393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd0642d97a57%3A0xdfc5ae3b95dc7564!2sPagnis%20Paga%2C%20Indore%2C%20Madhya%20Pradesh%20452007!5e0!3m2!1sen!2sin!4v1744479784331!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <div class="map-hover">
+    <h5>Indore</h5>
+
+    <ul>
+      <li>Weekday: <span>06:00 - 10:00</span></li>
+      <li>Saturday: <span>17:00 - 21:00</span></li>
+      <li>Sunday: <span>Special Batches</span></li>
+    </ul>
+
+    <i class="icon_pin"></i>
+  </div>
+</div>
+<!-- Map Section End -->
+
+<!-- Contact Section Begin -->
+<section class="contact-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="contact-info">
+          <h4>Information</h4>
+
+          <ul>
+            <li>
+              <i class="fa fa-phone"></i>
+              <%= ApplicationSetting.phone_number %>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <%= ApplicationSetting.contact_email %>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-address">
+          <h4></h4>
+          <ul>
+            <li>
+              <i class="fa fa-map-marker"></i>
+              <%= ApplicationSetting.club_address %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-8 offset-lg-1">
+        <div class="contact-form">
+          <h4>Get in touch</h4>
+
+          <%= form_with url: get_in_touches_path, method: :post, data: { turbo: false, remote: true }, id: "get-in-touch-contact-form" do |f| %>
+            <div id="form-response"></div>
+
+            <% if @contact.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this message from being sent:</h2>
+                <ul>
+                  <% @contact.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="row">
+              <div class="col-lg-12">
+                <%= f.text_field 'contact[name]', placeholder: 'Name', required: true %>
+              </div>
+
+              <div class="col-lg-6">
+                <%= f.email_field 'contact[email]', placeholder: 'Email', required: true %>
+              </div>
+
+              <div class="col-lg-6">
+                <%= f.number_field 'contact[phone_number]', placeholder: 'Mobile', required: true %>
+              </div>
+
+              <div class="col-lg-12">
+                <%= f.text_area 'contact[message]', placeholder: 'Message', required: true %>
+              </div>
+              <div class="col-lg-4">
+                <%= f.button :submit, class: 'c-btn', id: 'submit-btn' do %>
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-spinner ml-2 d-none">
+                    <i class="fa fa-spinner fa-spin"></i>
+                  </span>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Section End -->
+
+<% if false %>
+  <!-- Cta Section Begin -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="cta-text">
+            <h3>GeT Started Today</h3>
+            <p>New student special! $30 unlimited Gym for the first week anh 50% of our member!</p>
+          </div>
+
+          <a href="#" class="primary-btn cta-btn">book now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Cta Section End -->
+<% end %>

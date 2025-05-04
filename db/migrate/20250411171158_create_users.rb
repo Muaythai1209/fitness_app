@@ -8,17 +8,20 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string        :address, null: false
       t.string        :guardian_name, null: false
       t.string        :guardian_phone_number, null: false
-      t.string        :blood_group, null: false
-      t.text          :medical_history, null: false
+      t.integer       :blood_group, null: false
+      t.text          :medical_history
       t.string        :aadhaar_number, null: false
+      t.date          :joining_date, null: false
+      t.string        :status, null: false
+      t.date          :end_date
 
       t.timestamps
     end
 
-    add_index :users, :first_name,                unique: true
-    add_index :users, :last_name,                unique: true
+    add_index :users, :first_name
+    add_index :users, :last_name
     add_index :users, :phone_number,                unique: true
     add_index :users, :aadhaar_number,                unique: true
-    add_index :users, :blood_group,                unique: true
+    add_index :users, :blood_group
   end
 end

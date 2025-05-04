@@ -1,0 +1,9 @@
+<script>
+  window.addEventListener("load", (event) => {
+    window.parent.postMessage({
+      type: "<%= fetch_login_status %>",
+      code: 401,
+      message: 'Your session has expired. Please log in to continue.'
+    }, "*")
+  });
+</script>

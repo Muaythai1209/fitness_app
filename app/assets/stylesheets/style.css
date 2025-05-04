@@ -121,6 +121,14 @@ ol {
 	text-transform: uppercase;
 }
 
+.section-title h3 {
+	color: #ffffff;
+	font-size: 48px;
+	font-weight: 600;
+	margin-bottom: 18px;
+	text-transform: uppercase;
+}
+
 .section-title p {
 	color: #ffffff;
 	margin-bottom: 0;
@@ -1634,17 +1642,14 @@ ol {
 }
 
 .footer-widget .workout-program li {
-	list-style: none;
-}
-
-.footer-widget .workout-program li a {
+  list-style: none;
 	display: block;
-	font-size: 16px;
+	font-size: 14px;
 	font-family: "Oswald", sans-serif;
 	font-weight: 500;
 	color: #ffffff;
 	line-height: 18px;
-	margin-bottom: 22px;
+	margin-bottom: 10px;
 }
 
 .footer-widget .footer-info li {
@@ -3121,4 +3126,8 @@ ol {
 
 .main-logo {
   width: 13%;
+}
+
+.w-20 {
+  width: 20% !important;
 }

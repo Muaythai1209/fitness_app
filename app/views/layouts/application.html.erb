@@ -8,13 +8,34 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <%= render 'layouts/common/header' %>
-    <%= yield %>
-    <%= render 'layouts/common/footer' %>
+    <% if flash.any? %>
+      <% flash.each do |key, value| -%>
+        <section class="flash flash_<%= key %>">
+          <% if value.is_a?(Array) %>
+            <%   value.each do |message| %>
+              <%= message %>
+            <% end %>
+          <% else %>
+            <%= value.html_safe %>
+          <% end %>
+        </section>
+      <% end -%>
+    <% end %>
+
+    <% if controller_name == 'sessions' %>
+      <%= yield %>
+    <% else %>
+      <%= render 'layouts/common/header' %>
+      <%= yield %>
+      <%= render 'layouts/common/footer' %>
+    <% end %>
   </body>
 </html>

@@ -1,0 +1,6 @@
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="field-unit__field">
+  <%= f.select field.attribute, options_for_select(field.choices, field.selected_choice), {}, field.others_options %>
+</div>
