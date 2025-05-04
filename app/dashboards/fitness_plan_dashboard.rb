@@ -45,6 +45,10 @@ class FitnessPlanDashboard < BaseDashboard
     details
     with_diet
     personal_training
+    monthly
+    quarterly
+    half_yearly
+    yearly
     created_at
     updated_at
   ].freeze
