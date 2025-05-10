@@ -250,8 +250,12 @@ ol {
 	border-radius: 4px;
 }
 
+.site-btn:hover {
+  color: #000 !important;
+}
+
 .site-btn:after {
-	color: #fff;
+	color: #000;
 	-webkit-transition-duration: 500ms;
 	-o-transition-duration: 500ms;
 	transition-duration: 500ms;
