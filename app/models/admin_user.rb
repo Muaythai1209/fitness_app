@@ -14,7 +14,7 @@ class AdminUser < ApplicationRecord
   def self.from_google(email:, full_name:, uid:)
     return nil unless email =~ VALID_EMAIL_REGEX
     emails = ApplicationSetting.allowed_emails.split(',')
-    return nil unless emails.include?(email)
+    return nil unless emails.include?(email.downcase)
 
     create_with(uid: uid, full_name: full_name, status: :inactive).find_or_create_by!(email: email)
   end
