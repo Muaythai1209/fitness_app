@@ -23,63 +23,65 @@
 <%= render 'homes/sections/class_times' %>
 <!-- Class Time Section End -->
 
-<!-- Classes Section Begin -->
-<section class="classes-section schedule-page">
-  <div class="class-title">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <div class="section-title">
-            <h2>Our Classes</h2>
-            <p>Our Crossfit experts can help you discover new training techniques and exercises
-                <br />that offer a dynamic and efficient full-body workout.</p>
+<% if false %>
+  <!-- Classes Section Begin -->
+  <section class="classes-section schedule-page">
+    <div class="class-title">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="section-title">
+              <h2>Our Classes</h2>
+              <p>Our Crossfit experts can help you discover new training techniques and exercises
+                  <br />that offer a dynamic and efficient full-body workout.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-1.jpg') %>">
-          <h4>Crossfit Level 1</h4>
-          <p>Sufferers around the globe will be happy to hear that there are sleep apnea remedies.</p>
-          <a href="#" class="primary-btn class-btn d-none">Read More</a>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-1.jpg') %>">
+            <h4>Crossfit Level 1</h4>
+            <p>Sufferers around the globe will be happy to hear that there are sleep apnea remedies.</p>
+            <a href="#" class="primary-btn class-btn d-none">Read More</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-lg-3">
-        <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-2.jpg') %>">
-          <h4>BootCamp</h4>
-          <p>The oil, also called linseed oil, has many industrial uses – it is an important ingredient
-          </p>
-          <a href="#" class="primary-btn class-btn d-none">Read More</a>
+        <div class="col-lg-3">
+          <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-2.jpg') %>">
+            <h4>BootCamp</h4>
+            <p>The oil, also called linseed oil, has many industrial uses – it is an important ingredient
+            </p>
+            <a href="#" class="primary-btn class-btn d-none">Read More</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-lg-3">
-        <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-3.jpg') %>">
-          <h4>Energy Blast</h4>
-          <p>It is a very common occurrence like cold or fever depending upon your lifestyle. </p>
-          <a href="#" class="primary-btn class-btn d-none">Read More</a>
+        <div class="col-lg-3">
+          <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-3.jpg') %>">
+            <h4>Energy Blast</h4>
+            <p>It is a very common occurrence like cold or fever depending upon your lifestyle. </p>
+            <a href="#" class="primary-btn class-btn d-none">Read More</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-lg-3">
-        <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-4.jpg') %>">
-          <h4>CLASSIC BODY BALANCE</h4>
-          <p>The procedure is usually a preferred alternative to photorefractive keratectomy,</p>
-          <a href="#" class="primary-btn class-btn d-none">Read More</a>
+        <div class="col-lg-3">
+          <div class="classes-item set-bg" data-setbg="<%= asset_path('classes/class-4.jpg') %>">
+            <h4>CLASSIC BODY BALANCE</h4>
+            <p>The procedure is usually a preferred alternative to photorefractive keratectomy,</p>
+            <a href="#" class="primary-btn class-btn d-none">Read More</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Classes Section End -->
+  </section>
+  <!-- Classes Section End -->
+<% end %>
 
 <!-- Choseus Section Begin -->
-<section class="chooseus-section schedule-page spad d-none">
+<section class="chooseus-section schedule-page spad">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -96,8 +98,9 @@
           <%= image_tag asset_path("icons/chose-icon-1.png") %>
 
           <h5>Support 24/24</h5>
-          <p>One of the best ways to make a great vacation quickly horrible is to choose the wrong
-              accommodations for your trip. </p>
+          <p>
+            We provide round-the-clock support to ensure you’re never alone on your journey. Whether you have questions, need guidance, or face challenges, our team is here for you—anytime, day or night.
+          </p>
         </div>
       </div>
 
@@ -106,8 +109,9 @@
           <%= image_tag asset_path("icons/chose-icon-2.png") %>
 
           <h5>Our trainer</h5>
-          <p>If you are an infrequent traveler you may need some tips to keep the wife happy while you are
-              jet setting around the globe.</p>
+          <p>
+            Our trainer brings years of hands-on experience, deep industry knowledge, and a passion for teaching. With a personalized approach and a track record of successful trainees, they ensure every learner reaches their full potential.
+          </p>
         </div>
       </div>
 
@@ -116,8 +120,9 @@
           <%= image_tag asset_path("icons/chose-icon-3.png") %>
 
           <h5>Personalized sessions</h5>
-          <p>To succeed at any endeavor, you must stay the course…no matter what the cost! Here are some
-              surefire tips to help you on your journey.</p>
+          <p>
+            We tailor each session to match your learning style, pace, and goals. Whether you're a beginner or looking to upskill, our customized approach ensures maximum impact and growth.
+          </p>
         </div>
       </div>
 
@@ -126,8 +131,9 @@
           <%= image_tag asset_path("icons/chose-icon-4.png") %>
 
           <h5>Our equipment</h5>
-          <p>Rugby and Stratford-upon-Avon. Additionally, there are many things to see and do in and
-              around Coventry itself.</p>
+          <p>
+            We use state-of-the-art equipment to provide a professional and efficient training experience. Our tools are regularly updated and maintained to ensure safety, accuracy, and optimal performance during every session.
+            </p>
         </div>
       </div>
 
@@ -136,8 +142,9 @@
           <%= image_tag asset_path("icons/chose-icon-5.png") %>
 
           <h5>Classes daily</h5>
-          <p>We would just not have the will in us to go about our daily lives. Its motivation that helps
-              us get through the most mundane.</p>
+          <p>
+            We offer daily classes to keep you consistently engaged and progressing toward your goals. With flexible timings and a structured schedule, it's easy to build a routine that fits your lifestyle.
+          </p>
         </div>
       </div>
 
@@ -146,8 +153,9 @@
           <%= image_tag asset_path("icons/chose-icon-6.png") %>
 
           <h5>Focus on your health</h5>
-          <p>But there is only so far we can go within the constraints of a family budget in building the
-              perfect telescopic operation.</p>
+          <p>
+            Your health is our top priority. Our programs are designed to promote physical well-being, mental clarity, and long-term healthy habits that fit seamlessly into your daily life.
+          </p>
         </div>
       </div>
     </div>
